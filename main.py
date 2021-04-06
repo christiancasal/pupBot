@@ -17,7 +17,7 @@ async def on_message(message):
     if message.content.startswith('!stonk'):
         try:
             args = message.content.split()
-            stonk = yf.Ticker(args[1]);
+            stonk = yf.Ticker(upper(args[1]));
             converted_num = '% s' % stonk.info['regularMarketPrice']
             await message.channel.send('stonk price: ' + converted_num)
         except:
